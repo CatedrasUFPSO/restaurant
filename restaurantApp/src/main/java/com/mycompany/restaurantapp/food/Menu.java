@@ -1,5 +1,6 @@
 package com.mycompany.restaurantapp.food;
 
+import com.mycompany.restaurantapp.values.DishType;
 import java.util.ArrayList;
 
 public class Menu {
@@ -14,6 +15,16 @@ public class Menu {
     }
     
     public void showMenu() {
-        System.out.println(dishList);
+        System.out.println("*** --- MENÚ --- ***");
+        
+        for(DishType dishType : DishType.values()) {
+            System.out.println("--- " + dishType + " ---");
+            
+            for(Dish dish : dishList) {
+                if(dish.getType() == dishType) {
+                    System.out.println(dish.getName());
+                }
+            }   
+        }
     }
 }
